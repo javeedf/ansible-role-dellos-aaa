@@ -1,0 +1,16 @@
+---
+# vars file for Dell-Networking.dellos-aaa, below gives a sample configuration
+# Sample vars for dellos10 device
+dellos_aaa:
+  tacacs_server:
+      host: 10.10.10.10
+      key: 0
+      value: 0
+      auth_port: 3
+      state: "absent"
+  aaa_authentication:
+        login:
+            console: true
+            type: group radius group tacacs+ local
+            state: "absent"
+        re_authenticate: true
